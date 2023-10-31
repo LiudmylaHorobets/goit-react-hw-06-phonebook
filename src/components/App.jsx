@@ -42,11 +42,8 @@ export const App = () => {
     const newFilter = e.target.value;
     dispatch(filterContacts(newFilter));
   };
-  // const handleFilterChange = filteredValue => {
-  //   dispatch(filterContacts(filteredValue));
-  // };
 
-  const getContactFromFilter = () => {
+   const getContactFromFilter = () => {
     if (typeof filter !== 'string') {
       return contacts;
     }
@@ -55,11 +52,6 @@ export const App = () => {
     );
     return filterContacts;
   };
-
-  // localstorage
-  // useEffect(() => {
-  //   localStorage.setItem('contacts', JSON.stringify(contacts));
-  // }, [contacts]);
 
   return (
     <div className={css.phonebook}>
@@ -75,9 +67,9 @@ export const App = () => {
           />
         </>
       ) : (
-        <h3 className={css.titleNotification}>
-          There are no any contacts here
-        </h3>
+        <p className={css.titleNotification}>
+          Your phonebook is empty. Add first contact!
+        </p>
       )}
     </div>
   );
