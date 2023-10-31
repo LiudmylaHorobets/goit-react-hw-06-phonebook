@@ -12,11 +12,8 @@ const INITIAL_STATE = {
 };
 
 const contactsSlice = createSlice({
-  // Ім'я слайсу
   name: 'contacts',
-  // Початковий стан редюсера слайсу
   initialState: INITIAL_STATE,
-  // Об'єкт редюсерів
   reducers: {
     addContacts(state, action) {
       state.contacts = [...state.contacts, action.payload];
@@ -30,8 +27,6 @@ const contactsSlice = createSlice({
   },
 });
 
-// Генератори екшенів
 export const { addContacts, deleteContacts, filterContacts } =
   contactsSlice.actions;
-// Редюсер слайсу
 export const contactsReducer = contactsSlice.reducer;
